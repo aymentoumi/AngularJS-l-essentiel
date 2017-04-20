@@ -1,0 +1,8 @@
+<div ng-init="top = 20" style="margin: {{top}}px 20px 0px 20px;">
+<div ng-repeat="prj in projetCtrl.getProjets()
+| filter : {'nom' : filtre}
+| filter : {'importance' : select_importance}
+| orderBy : tri : projetCtrl.getOrdre()">
+<projet></projet>
+</div>
+</div>

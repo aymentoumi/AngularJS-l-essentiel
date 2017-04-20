@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="angular.min.js"></script>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="application" ng-controller="ProjetController as projetCtrl">
+
+    <nav ng-init="projetCtrl.loadProjets()" class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand" ng-init="action=true" ng-click="projetCtrl.toggleAction()">
+            <u>{{projetCtrl.getProjets().length}} Projets</u>
+          </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><button class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#myModal">Nouveau</button></li>
+          <li><a href="#"><span class="glyphicon glyphicon-calendar"></span> {{projetCtrl.getDate() | date:'dd/MM/yyyy'}}</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-time"></span> {{time}}</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  <ajout-projet-form></ajout-projet-form>
+
+  <filtrage-projet-form></filtrage-projet-form>
+
+  <liste-projets></liste-projets>
+
+  <script type="text/javascript" src="datas.js"></script>
+  <script type="text/javascript" src="directives.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

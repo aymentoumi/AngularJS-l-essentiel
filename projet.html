@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-sm-2">
+    <a data-toggle="collapse"
+    data-target="#{{prj.objectId}}">
+      {{prj.nom}}
+    </a>
+    <span class="badge">
+      {{prj.importance | stars}}
+    </span>
+    </div>
+    <div class="col-sm-8"></div>
+    <div class="col-sm-1">
+      <span class="label label-info">
+        {{prj.updatedAt | date:'dd/MM/yyyy'}}
+      </span>
+      </div>
+      <div class="col-sm-1">
+      <button style="float: right" class="btn btn-danger btn-xs" ng-click="projetCtrl.deleteProjet(prj.objectId)">
+        x
+      </button>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body" id="{{prj.objectId}}" class="collapse">
+    <p style="background-color:{{projetCtrl.getBgColor(prj.importance)}};"> {{prj.description}} </p>
+  </div>
+</div>

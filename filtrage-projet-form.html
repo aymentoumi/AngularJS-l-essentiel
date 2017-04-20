@@ -1,0 +1,46 @@
+<div class="well" style="margin: 50px 20px 20px 20px;" ng-show="action">
+<form class="form-inline">
+  <div class="form-group">
+    <label for="nom">Filtrage</label>
+    <input id="nom" class="form-control" type="text" placeholder="nom projet" ng-model="filtre">
+  </div>
+  <div class="form-group">
+    <label for="importance">Affichage</label>
+    <select class="form-control" id="importance" ng-model="select_importance">
+      <option></option>
+      <option value="1">*</option>
+      <option value="2">**</option>
+      <option value="3">***</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="order">Ordre</label>
+    <select class="form-control" id="order" ng-model="ordre">
+      <option value="0" selected>Croissant</option>
+      <option value="1">Décroissant</option>
+    </select>
+  </div>
+
+  <div class="form-group" ng-init="tri = 'date_creation'">
+    <label class="radio-inline">
+      <input type="radio" name="order" ng-click="tri = 'date_creation'" checked>
+      Tri par date
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="order" ng-click="tri = 'importance'">
+      Tri par importance
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="order" ng-click="tri = 'nom'">
+      Tri par nom
+    </label>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="couleur">
+      Afficher couleur
+    </label>
+  </div>
+</form>
+</div>
